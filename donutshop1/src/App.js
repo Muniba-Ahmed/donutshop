@@ -1,9 +1,26 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
+import Home from "./pages/Home.js";
+import About from "./pages/About.js";
+import ContactForm from "./pages/ContactForm.js";
+import Donuts from "./pages/Donuts.js";
+import Location from "./pages/Location.js";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contactform" element={<ContactForm />} />
+          <Route path="/donuts" element={<Donuts />} />
+          <Route path="/location" element={<Location />} />
+        </Routes>
+      </Router>
+    </div>
+  );
 }
 
 export default App;
@@ -16,4 +33,6 @@ export default App;
 //styles css?
 //contact page with form.
 
-//back-end?
+//back-end
+// user authorization & pass?
+//testing?
