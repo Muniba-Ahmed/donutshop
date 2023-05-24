@@ -7,6 +7,7 @@ import ContactForm from "./pages/ContactForm.js";
 import Donuts from "./pages/Donuts.js";
 import Location from "./pages/Location.js";
 import Navbar from "./components/Navbar.js";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="/location" element={<Location />} />
           <Route path="/contactform" element={<ContactForm />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );
@@ -38,3 +40,5 @@ export default App;
 //back-end
 // user authorization & pass?
 //testing?
+
+//site Map?

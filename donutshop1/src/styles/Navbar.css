@@ -112,3 +112,55 @@
   height: 100px;
   background: whitesmoke;
 }
+
+/** 
+#open {
+  height: 100vh;
+}
+
+#open .links {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+#open a {
+  width: 100%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 900px) {
+  .navbar a {
+    width: 70px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .toggleButton {
+    display: flex;
+  }
+  #close a {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .toggleButton {
+    display: none;
+  }
+
+  .hiddenLinks {
+    display: none;
+  }
+
+  #open {
+    height: 100px;
+  }
+
+  #open .links {
+    flex-direction: row;
+  }
+}
+
+
+*/
