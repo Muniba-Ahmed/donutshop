@@ -69,3 +69,13 @@
 .bm-overlay {
   background: rgba(0, 0, 0, 0.3);
 }
+
+.toggleButton {
+  display: flex;
+  justify-content: flex-start;
+}
+
+/** Hiding the hamburger icon when navbar is open */
+.hidden-icon {
+  display: none;
+}
