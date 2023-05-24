@@ -63,6 +63,7 @@
 .bm-item {
   /* display: inline-block; */
   color: whitesmoke;
+  text-decoration: none;
   display: flex;
   padding: 10px;
 }
