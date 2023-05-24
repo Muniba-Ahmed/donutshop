@@ -6,17 +6,19 @@ import About from "./pages/About.js";
 import ContactForm from "./pages/ContactForm.js";
 import Donuts from "./pages/Donuts.js";
 import Location from "./pages/Location.js";
+import Navbar from "./components/Navbar.js";
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contactform" element={<ContactForm />} />
           <Route path="/donuts" element={<Donuts />} />
+          <Route path="/about" element={<About />} />
           <Route path="/location" element={<Location />} />
+          <Route path="/contactform" element={<ContactForm />} />
         </Routes>
       </Router>
     </div>
