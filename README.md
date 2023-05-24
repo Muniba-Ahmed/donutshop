@@ -1,3 +1,3 @@
-# donutshop
+# Welcome
 
-cd into donutshop1
+Welcome to the Donut Shop Full Stack Project!
