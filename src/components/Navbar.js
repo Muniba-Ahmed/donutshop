@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const pages = ["Home", "Menu", "Contact"];
+const pages = ["Menu", "Contact"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
@@ -94,7 +94,7 @@ function Navbar() {
                     <Typography textAlign="center">
                       <Link
                         style={{ textDecoration: "none", color: "black" }}
-                        to={`/${page}`}
+                        to={`/${page.toLowerCase()}`}
                       >
                         {page}
                       </Link>
@@ -108,7 +108,7 @@ function Navbar() {
               variant="h5"
               noWrap
               component="a"
-              href=""
+              href="/"
               sx={{
                 mr: 2,
                 display: { xs: "flex", md: "none" },
@@ -131,7 +131,7 @@ function Navbar() {
                 >
                   <Link
                     style={{ textDecoration: "none", color: "white" }}
-                    to={`/${page}`}
+                    to={`/${page.toLowerCase()}`}
                   >
                     {page}
                   </Link>
