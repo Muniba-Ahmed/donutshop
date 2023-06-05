@@ -25,7 +25,7 @@ export const itemList = [
     name: "Original Glazed Doughnut",
     image: glazedOriginal2,
     description:
-      "Experience the heavenly delight of our freshly baked Original Glazed Doughnut—a soft, fluffy masterpiece with a delectable glaze, perfectly crafted to satisfy your sweet tooth and transport you to a world of indulgence.",
+      "Experience the heavenly delight of our freshly baked Original Glazed Doughnut —a soft, fluffy masterpiece with a delectable glaze, perfectly crafted to satisfy your sweet tooth and transport you to a world of indulgence.",
     type: "donut",
   },
   {
@@ -169,3 +169,14 @@ export const itemList = [
     type: "icedCoffee",
   },
 ];
+
+function newItemList() {
+  const itemList2 = itemList.map((obj) => ({
+    ...obj,
+    price: 5,
+    inventory: 10,
+  }));
+  return itemList2;
+}
+
+console.log(newItemList());

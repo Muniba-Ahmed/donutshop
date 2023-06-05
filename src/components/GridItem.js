@@ -9,7 +9,6 @@ import {
   CardActionArea,
 } from "@mui/material";
 import { itemList } from "../helpers/ItemList";
-// import blueberryCake from "../assets/blueberryCake.png";
 
 function GridItem({ image, name, onClick }) {
   return (
@@ -40,3 +39,4 @@ function GridItem({ image, name, onClick }) {
 }
 
 export default GridItem;
+console.log(itemList.length);
