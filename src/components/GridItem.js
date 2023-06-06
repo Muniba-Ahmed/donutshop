@@ -1,5 +1,4 @@
 import React from "react";
-
 import {
   Grid,
   Card,
@@ -8,15 +7,16 @@ import {
   Typography,
   CardActionArea,
 } from "@mui/material";
-import { itemList } from "../helpers/ItemList";
+
+import { itemList2 } from "../helpers/ItemList";
 
 function GridItem({ image, name, onClick }) {
   return (
     <Grid container spacing={3}>
-      {itemList.map((item) => {
+      {itemList2.map((item, index) => {
         return (
-          <Grid item xs={3}>
-            <Card sx={{ maxWidth: 345 }}>
+          <Grid item xs={12} sm={6} md={3} key={index}>
+            <Card sx={{ maxWidth: 200 }}>
               <CardActionArea>
                 <CardMedia
                   component="img"
@@ -25,7 +25,7 @@ function GridItem({ image, name, onClick }) {
                   alt="green iguana"
                 />
                 <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
+                  <Typography gutterBottom variant="subtitle1" component="div">
                     {item.name}
                   </Typography>
                 </CardContent>
@@ -39,4 +39,6 @@ function GridItem({ image, name, onClick }) {
 }
 
 export default GridItem;
-console.log(itemList.length);
+
+//maxWidth: 345
+//width: 200, height: 210

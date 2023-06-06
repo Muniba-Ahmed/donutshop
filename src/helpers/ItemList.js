@@ -71,7 +71,7 @@ export const itemList = [
     type: "donut",
   },
   {
-    name: "CoffeeCrumble Cake",
+    name: "Coffee Crumble Cake",
     image: coffeeCrumbleCake,
     description:
       "A classic coffee cake with swirled cinnamon sugar and topped with a crunchy streusel topping.",
@@ -170,13 +170,10 @@ export const itemList = [
   },
 ];
 
-function newItemList() {
-  const itemList2 = itemList.map((obj) => ({
-    ...obj,
-    price: 5,
-    inventory: 10,
-  }));
-  return itemList2;
-}
+export const itemList2 = itemList.map((obj) => ({
+  ...obj,
+  price: 5,
+  inventory: 10,
+}));
 
-console.log(newItemList());
+console.log("is this working", itemList2);
