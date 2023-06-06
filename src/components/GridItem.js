@@ -28,6 +28,9 @@ function GridItem({ image, name, onClick }) {
                   <Typography gutterBottom variant="subtitle1" component="div">
                     {item.name}
                   </Typography>
+                  <Typography gutterBottom variant="body2" component="div">
+                    {`$${item.price}.00`}
+                  </Typography>
                 </CardContent>
               </CardActionArea>
             </Card>
