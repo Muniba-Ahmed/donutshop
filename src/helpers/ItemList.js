@@ -36,13 +36,6 @@ export const itemList = [
     type: "donut",
   },
   {
-    name: "Cake Batter Doughnut",
-    image: cakeBatterFilled,
-    description:
-      "Celebrate your birthday every day with our scrumptious Cake Batter Doughnut. Indulge in this festive doughnut filled with creamy cake batter cream filling, topped with yellow icing and confetti sprinkles.",
-    type: "donut",
-  },
-  {
     name: "Glazed Raspberry Filled Doughnut",
     image: raspberryFilled,
     description:
@@ -70,6 +63,15 @@ export const itemList = [
       "An Original Glazed Doughnut dipped in a fruity strawberry icing, topped with colorful rainbow sprinkles. Brighten your day with Donut Shop's Strawberry Iced Doughnut with Sprinkles.",
     type: "donut",
   },
+
+  {
+    name: "Cake Batter Doughnut",
+    image: cakeBatterFilled,
+    description:
+      "Celebrate your birthday every day with our scrumptious Cake Batter Doughnut. Indulge in this festive doughnut filled with creamy cake batter cream filling, topped with yellow icing and confetti sprinkles.",
+    type: "donut",
+  },
+
   {
     name: "Coffee Crumble Cake",
     image: coffeeCrumbleCake,
@@ -165,7 +167,7 @@ export const itemList = [
     name: "Vanilla Iced Coffee",
     image: icedCoffeeVanilla,
     description:
-      "Our premium espresso shots blended with our French Deluxe™ vanilla powder and served over ice for a refreshing and delicious vanilla coffee drink",
+      "Our premium espresso shots blended with our French Deluxe vanilla powder and served over ice for a refreshing and delicious vanilla coffee drink",
     type: "icedCoffee",
   },
 ];
