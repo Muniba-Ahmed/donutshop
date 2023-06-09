@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import {
-  Grid,
+  Button,
+  Box,
   Card,
   CardContent,
   CardMedia,
   CardActionArea,
-  Typography,
+  Grid,
   Modal,
-  Button,
-  Box,
+  Typography,
 } from "@mui/material";
+// import { itemDetailsList } from "../helpers/ItemList";
 
 const modalStyle = {
   position: "absolute",
