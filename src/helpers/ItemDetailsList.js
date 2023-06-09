@@ -172,7 +172,7 @@ export const itemList = [
   },
 ];
 
-export const itemList2 = itemList.map((obj) => {
+export const itemDetailsList = itemList.map((obj) => {
   let price;
 
   switch (obj.type) {
@@ -198,5 +198,3 @@ export const itemList2 = itemList.map((obj) => {
     inventory: 10,
   };
 });
-
-console.log("is this working", itemList2);

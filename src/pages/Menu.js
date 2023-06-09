@@ -1,12 +1,12 @@
 import React from "react";
-import { itemList2 } from "../helpers/ItemList";
+import { itemDetailsList } from "../helpers/ItemDetailsList";
 
 import GridItem from "../components/GridItem";
 
 function Menu() {
   return (
     <div>
-      <GridItem itemList2={itemList2} />
+      <GridItem itemDetailsList={itemDetailsList} />
     </div>
   );
 }
