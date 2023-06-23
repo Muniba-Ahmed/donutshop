@@ -31,6 +31,7 @@ const menuContainerStyle = {
 
 function GridItem({ itemDetailsList }) {
   const [selectedItem, setSelectedItem] = useState(null);
+  const { name, description, image, price, inventory } = selectedItem || {};
 
   const handleModalOpen = (item) => {
     setSelectedItem(item);
@@ -48,46 +49,58 @@ function GridItem({ itemDetailsList }) {
         rowSpacing={3}
         columnSpacing={{ xs: 1, sm: 3, md: 2 }}
       >
-        {itemDetailsList.map((menuItem, index) => (
-          <Grid item xs={12} sm={6} md={3} lg={3} key={index}>
-            <Card sx={{ maxWidth: 200 }}>
-              <CardActionArea
-                onClick={() => {
-                  handleModalOpen(menuItem);
-                }}
-              >
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image={menuItem.image}
-                  alt="menu item"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="subtitle1" component="div">
-                    {menuItem.name}
-                  </Typography>
-                  <Typography gutterBottom variant="body2" component="div">
-                    {`$${menuItem.price}.00`}
-                  </Typography>
-                </CardContent>
-              </CardActionArea>
-            </Card>
-          </Grid>
-        ))}
+        {itemDetailsList.map(
+          ({ name, description, price, image, inventory }, index) => (
+            <Grid item xs={12} sm={6} md={3} lg={3} key={index}>
+              <Card sx={{ maxWidth: 200 }}>
+                <CardActionArea
+                  onClick={() => {
+                    handleModalOpen({
+                      name,
+                      description,
+                      price,
+                      image,
+                      inventory,
+                    });
+                  }}
+                >
+                  <CardMedia
+                    component="img"
+                    height="140"
+                    image={image}
+                    alt="menu item"
+                  />
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="subtitle1"
+                      component="div"
+                    >
+                      {name}
+                    </Typography>
+                    <Typography gutterBottom variant="body2" component="div">
+                      {`$${price}.00`}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          )
+        )}
         {selectedItem && (
           <Modal open={selectedItem !== null} onClose={handleCloseModal}>
             <Box sx={modalStyle}>
               <div>
-                <Typography variant="h5">{selectedItem.name}</Typography>
+                <Typography variant="h5">{name}</Typography>
                 <Typography variant="body1" sx={{ mt: 2 }}>
-                  {selectedItem.description}
+                  {description}
                 </Typography>
-                <img src={selectedItem.image} alt={selectedItem.name} />
+                <img src={image} alt={name} />
                 <Typography variant="body1" sx={{ mt: 2 }}>
-                  Inventory: {selectedItem.inventory}
+                  Inventory: {inventory}
                 </Typography>
                 <Typography variant="body1" sx={{ mt: 2 }}>
-                  {`$${selectedItem.price}.00`}
+                  {`$${price}.00`}
                 </Typography>
                 <Button variant="contained" onClick={handleCloseModal}>
                   Exit

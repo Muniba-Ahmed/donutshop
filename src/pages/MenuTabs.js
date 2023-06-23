@@ -81,7 +81,7 @@ export const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
   })
 );
 
-export function Menu() {
+export function MenuTabs() {
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -114,4 +114,4 @@ export function Menu() {
   );
 }
 
-export default Menu;
+export default MenuTabs;
