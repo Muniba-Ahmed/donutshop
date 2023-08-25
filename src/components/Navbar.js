@@ -15,7 +15,7 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 
-const pages = ["Menu", "Contact"];
+const pages = ["Menu", "Contact", "Location"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 function Navbar() {
