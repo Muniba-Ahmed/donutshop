@@ -16,30 +16,35 @@ server.use(express.urlencoded({ extended: false }));
 async function sendEmail({ firstName, lastName, email, orderInfo }) {
   const contactFormText = `
   First Name: ${firstName}
-  Last Name:${lastName} 
+  Last Name:${lastName}
   Email: ${email}
   Order Information: ${orderInfo}
-`;
+  `;
+
   const transporter = nodeMailer.createTransport({
     service: "gmail",
     host: "smtp.gmail.com",
     port: 465,
     auth: {
-      user: process.env.gmailUser,
-      pass: process.env.gmailPassword,
-    },
-    tls: {
-      rejectUnauthorized: false,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD,
     },
   });
 
-  const info = await transporter.sendMail({
-    from: process.env.gmailUser,
-    to: process.env.gmailReceiver,
+  const mailOptions = {
+    from: process.env.GMAIL_USER,
+    to: process.env.GMAIL_RECEIVER,
     subject: "New Contact-Form Submission",
-    text: `${contactFormText} `,
-  });
-  console.log("message sent: " + info.messageId);
+    text: contactFormText,
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    console.log("Email sent successfully");
+  } catch (error) {
+    console.error("Error sending email:", error);
+    throw error;
+  }
 }
 
 server.get("/api/data", (req, res) => {
@@ -51,21 +56,20 @@ server.get("/api/data", (req, res) => {
   res.json(data);
 });
 
-server.post("/send-email", (req, res) => {
+server.post("/send-email", async (req, res) => {
   const formData = req.body;
-  sendEmail(formData)
-    .then(() => {
-      res.status(200).json({ message: "Email sent successfully" });
-    })
-    .catch((error) => {
-      res.status(500).json({ error: "Error sending email" });
-    });
+  try {
+    await sendEmail(formData);
+    res.status(200).json({ message: "Email sent successfully" });
+  } catch (error) {
+    res.status(500).json({ error: "Error sending email" });
+  }
 });
 
-const PORT = process.env.PORT || 9006;
+const PORT = process.env.PORT || 9007;
 
 server.listen(PORT, () => {
-  console.log(`Darcy is running the server on ${PORT}`);
+  console.log(`Darcy's Server is running on port ${PORT}`);
 });
 
 module.exports = server;

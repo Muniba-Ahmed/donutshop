@@ -23,7 +23,7 @@ function Contact() {
 
   const getData = async () => {
     try {
-      const response = await axios.get("http://localhost:9006/api/data");
+      const response = await axios.get("http://localhost:9007/api/data");
 
       setDataFromServer(response.data);
     } catch (error) {
@@ -39,7 +39,7 @@ function Contact() {
   };
 
   const onSubmit = async (data) => {
-    const endpoint = "http://localhost:9006/send-email";
+    const endpoint = "http://localhost:9007/send-email";
     try {
       const response = await axios.post(endpoint, data, {
         headers: {
